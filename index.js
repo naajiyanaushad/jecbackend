@@ -2,18 +2,14 @@ const express = require('express');
 
 const cors = require('cors');
 
-const { MongoClient} = require('mongodb');
 
-async function mongoConnect(){
-    let cliient = new MongoClient('mongodb+srv')
-}
+const app = express();
 
-app.use(cors())     
+app.use(cors())
 app.use(express.json());
 
-app.get('/user', async function(req, res) {
-    let output = await db.collection('user').find({"userName":req.body.userName}).toArray();
-    res.json(output)
+app.get('/user', function(req, res) {
+    res.json('hello world')
 })
 
 
